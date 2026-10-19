@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IT and Digital inventory - Assets Management</title>
+  <link rel="icon" href="../docs/design/brand/favicon-32x32.png">
+  <link rel="stylesheet" href="../docs/design/brand/design-tokens.css">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="logo-block"><img src="../docs/design/brand/access-logo.png" alt="Access logo"></div>
+    <div class="product">Assets Management</div>
+    <nav class="nav">
+      <div class="group">Overview</div>
+      <a href="dashboard-security.html"><span class="ico">&#9703;</span>Security dashboard</a>
+      <div class="group">Inventory</div>
+      <a href="assets-list.html"><span class="ico">&#9776;</span>All assets</a>
+      <a class="active" href="it-inventory.html"><span class="ico">&#9881;</span>IT and Digital</a>
+      <div class="group">Business</div>
+      <a href="procurement.html"><span class="ico">&#9873;</span>Procurement <span class="soon">Phase 4</span></a>
+      <a href="compliance.html"><span class="ico">&#10003;</span>Compliance <span class="soon">Phase 5</span></a>
+      <div class="group">Admin</div>
+      <a href="#"><span class="ico">&#9786;</span>Users and roles</a>
+      <a href="#"><span class="ico">&#9638;</span>OS catalog</a>
+    </nav>
+    <div class="user"><div class="avatar">KO</div><div>Kofi Owusu<small>IT and Digital</small></div></div>
+  </aside>
+
+  <div class="main">
+    <div class="banner-mock">MOCKUP &middot; fictional data</div>
+    <div class="topbar">
+      <div class="search"><input placeholder="Search assets by name, tag, IP, hostname" aria-label="Search"></div>
+      <div class="spacer"></div>
+      <span class="role-badge">IT and Digital</span>
+    </div>
+
+    <main class="content">
+      <div class="page-head">
+        <div>
+          <h1>IT and Digital inventory</h1>
+          <p>Provisioned systems, virtual machines, applications and network infrastructure.</p>
+        </div>
+        <div class="actions">
+          <a class="btn" href="#">Bulk import</a>
+          <a class="btn primary" href="#">+ Add VM</a>
+        </div>
+      </div>
+
+      <section class="grid g-4">
+        <div class="card kpi"><span class="label">Servers</span><span class="value">612</span><span class="delta">9 planned</span></div>
+        <div class="card kpi"><span class="label">Virtual machines</span><span class="value">2,184</span><span class="delta">across 14 hosts clusters</span></div>
+        <div class="card kpi"><span class="label">Network devices</span><span class="value">1,103</span><span class="delta">41 sites</span></div>
+        <div class="card kpi"><span class="label">Applications</span><span class="value">913</span><span class="delta">128 in-house developed</span></div>
+      </section>
+
+      <section class="card">
+        <div class="tabs">
+          <a href="#">Servers<span class="count">612</span></a>
+          <a class="active" href="#">Virtual machines<span class="count">2,184</span></a>
+          <a href="#">Network devices<span class="count">1,103</span></a>
+          <a href="#">Applications<span class="count">913</span></a>
+          <a href="#">Locations<span class="count">41</span></a>
+        </div>
+        <div class="toolbar">
+          <select class="select" aria-label="Hypervisor"><option>Hypervisor: All</option><option>vSphere</option><option>Hyper-V</option><option>KVM</option></select>
+          <select class="select" aria-label="Cluster"><option>Cluster: All</option><option>HQ-PROD-01</option><option>HQ-PROD-02</option><option>DR-01</option></select>
+          <select class="select" aria-label="Environment"><option>Environment: All</option><option>Production</option><option>UAT</option></select>
+          <input class="input" placeholder="Filter by hostname or IP" aria-label="Filter">
+        </div>
+        <div class="table-wrap">
+        <table>
+          <thead><tr><th>VM</th><th>Host</th><th>Cluster</th><th>vCPU</th><th>RAM</th><th>Disk</th><th>IP</th><th>OS</th><th>Runs</th><th>Health</th></tr></thead>
+          <tbody>
+            <tr><td><a href="asset-detail.html"><b>app-prod-07</b></a></td><td>esx-hq-03</td><td>HQ-PROD-01</td><td>4</td><td>16 GB</td><td>200 GB</td><td class="mono">10.20.8.37</td><td>Windows Server 2016</td><td>3 apps</td><td><span class="chip warn">Nearing EOL</span></td></tr>
+            <tr><td><a href="asset-detail.html"><b>app-prod-08</b></a></td><td>esx-hq-04</td><td>HQ-PROD-01</td><td>4</td><td>16 GB</td><td>200 GB</td><td class="mono">10.20.8.38</td><td>Windows Server 2019</td><td>3 apps</td><td><span class="chip ok">Supported</span></td></tr>
+            <tr><td><a href="asset-detail.html"><b>db-prod-02</b></a></td><td>esx-hq-01</td><td>HQ-PROD-02</td><td>16</td><td>128 GB</td><td>2 TB</td><td class="mono">10.20.4.22</td><td>RHEL 8</td><td>2 apps</td><td><span class="chip ok">Supported</span></td></tr>
+            <tr><td><a href="asset-detail.html"><b>legacy-rpt-01</b></a></td><td>esx-hq-02</td><td>HQ-PROD-02</td><td>2</td><td>8 GB</td><td>100 GB</td><td class="mono">10.20.9.5</td><td>Windows Server 2012 R2</td><td>1 app</td><td><span class="chip danger">Obsolete</span></td></tr>
+            <tr><td><a href="asset-detail.html"><b>dr-web-01</b></a></td><td>esx-dr-01</td><td>DR-01</td><td>4</td><td>8 GB</td><td>80 GB</td><td class="mono">10.90.1.11</td><td>Ubuntu 22.04 LTS</td><td>1 app</td><td><span class="chip ok">Supported</span></td></tr>
+            <tr><td><a href="asset-detail.html"><b>uat-web-02</b></a></td><td>esx-hq-05</td><td>HQ-UAT-01</td><td>2</td><td>8 GB</td><td>80 GB</td><td class="mono">10.30.2.12</td><td>Ubuntu 22.04 LTS</td><td>2 apps</td><td><span class="chip ok">Supported</span></td></tr>
+          </tbody>
+        </table>
+        </div>
+        <div class="pager">
+          <span>Showing 1-6 of 2,184</span>
+          <span class="right"><a class="btn sm" href="#">Previous</a><a class="btn sm" href="#">Next</a></span>
+        </div>
+      </section>
+
+      <section class="card">
+        <header><h2>Bulk import: dry-run preview</h2><span class="right chip warn nodot">3 rows need attention</span></header>
+        <div class="table-wrap">
+        <table>
+          <thead><tr><th>Row</th><th>Name</th><th>Type</th><th>Result</th><th>Message</th></tr></thead>
+          <tbody>
+            <tr><td>2</td><td>app-prod-11</td><td>VM</td><td><span class="chip ok">Will create</span></td><td class="muted">-</td></tr>
+            <tr><td>3</td><td>app-prod-12</td><td>VM</td><td><span class="chip info">Will update</span></td><td class="muted">OS version changed</td></tr>
+            <tr><td>4</td><td>db-prod-09</td><td>VM</td><td><span class="chip danger">Error</span></td><td>Owner team "DBA Team" not found</td></tr>
+            <tr><td>5</td><td>(blank)</td><td>Server</td><td><span class="chip danger">Error</span></td><td>Name is required</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Security dashboard - Assets Management</title>
+  <link rel="icon" href="../docs/design/brand/favicon-32x32.png">
+  <link rel="stylesheet" href="../docs/design/brand/design-tokens.css">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="logo-block"><img src="../docs/design/brand/access-logo.png" alt="Access logo"></div>
+    <div class="product">Assets Management</div>
+    <nav class="nav">
+      <div class="group">Overview</div>
+      <a class="active" href="dashboard-security.html"><span class="ico">&#9703;</span>Security dashboard</a>
+      <div class="group">Inventory</div>
+      <a href="assets-list.html"><span class="ico">&#9776;</span>All assets</a>
+      <a href="it-inventory.html"><span class="ico">&#9881;</span>IT and Digital</a>
+      <div class="group">Business</div>
+      <a href="procurement.html"><span class="ico">&#9873;</span>Procurement <span class="soon">Phase 4</span></a>
+      <a href="compliance.html"><span class="ico">&#10003;</span>Compliance <span class="soon">Phase 5</span></a>
+      <div class="group">Admin</div>
+      <a href="#"><span class="ico">&#9786;</span>Users and roles</a>
+      <a href="#"><span class="ico">&#9638;</span>OS catalog</a>
+    </nav>
+    <div class="user"><div class="avatar">AM</div><div>Ama Mensah<small>Security</small></div></div>
+  </aside>
+
+  <div class="main">
+    <div class="banner-mock">MOCKUP &middot; fictional data</div>
+    <div class="topbar">
+      <div class="search"><input placeholder="Search assets by name, tag, IP, hostname" aria-label="Search"></div>
+      <div class="spacer"></div>
+      <span class="role-badge">Security</span>
+    </div>
+
+    <main class="content">
+      <div class="page-head">
+        <div>
+          <h1>Security dashboard</h1>
+          <p>Health and aging of assets deployed on the domain. Last data refresh 19 Oct 2026, 08:00 UTC.</p>
+        </div>
+        <div class="actions">
+          <select class="select" aria-label="Environment"><option>All environments</option><option>Production</option><option>UAT</option><option>Development</option></select>
+          <select class="select" aria-label="EOL window"><option>Nearing EOL: 90 days</option><option>60 days</option><option>180 days</option></select>
+          <a class="btn" href="#">Export report</a>
+        </div>
+      </div>
+
+      <section class="grid g-4">
+        <div class="card kpi"><span class="label">Total active assets</span><span class="value">4,812</span><span class="delta">+38 this month</span></div>
+        <div class="card kpi danger"><span class="label">Obsolete (past end of support)</span><span class="value">312</span><span class="delta">6.5% of assets &middot; 54 in Production</span></div>
+        <div class="card kpi warn"><span class="label">Nearing end of support</span><span class="value">187</span><span class="delta">within 90 days</span></div>
+        <div class="card kpi neutral"><span class="label">Stale or ownerless</span><span class="value">137</span><span class="delta">96 stale &middot; 41 no owner</span></div>
+      </section>
+
+      <section class="grid g-21">
+        <div class="card">
+          <header><h2>Assets by operating system and version</h2>
+            <div class="right legend"><span><i class="s-ok"></i>Supported</span><span><i class="s-warn"></i>Nearing EOL</span><span><i class="s-danger"></i>Obsolete</span><span><i class="s-grey"></i>Unknown</span></div>
+          </header>
+          <div class="body">
+            <div class="bar-row"><span>Windows Server 2022</span><div class="bar"><span class="s-ok" style="width:92%"></span><span class="s-warn" style="width:8%"></span></div><span class="mono">1,204</span></div>
+            <div class="bar-row"><span>Windows Server 2019</span><div class="bar"><span class="s-ok" style="width:70%"></span><span class="s-warn" style="width:30%"></span></div><span class="mono">861</span></div>
+            <div class="bar-row"><span>Windows Server 2016</span><div class="bar"><span class="s-warn" style="width:62%"></span><span class="s-ok" style="width:38%"></span></div><span class="mono">540</span></div>
+            <div class="bar-row"><span>Windows Server 2012 R2</span><div class="bar"><span class="s-danger" style="width:100%"></span></div><span class="mono">168</span></div>
+            <div class="bar-row"><span>Ubuntu 22.04 LTS</span><div class="bar"><span class="s-ok" style="width:100%"></span></div><span class="mono">702</span></div>
+            <div class="bar-row"><span>Ubuntu 18.04 LTS</span><div class="bar"><span class="s-danger" style="width:100%"></span></div><span class="mono">96</span></div>
+            <div class="bar-row"><span>RHEL 8</span><div class="bar"><span class="s-ok" style="width:78%"></span><span class="s-warn" style="width:22%"></span></div><span class="mono">355</span></div>
+            <div class="bar-row"><span>RHEL 7</span><div class="bar"><span class="s-danger" style="width:100%"></span></div><span class="mono">48</span></div>
+            <div class="bar-row"><span>Cisco IOS XE</span><div class="bar"><span class="s-ok" style="width:85%"></span><span class="s-danger" style="width:15%"></span></div><span class="mono">214</span></div>
+            <div class="bar-row"><span>Unknown OS</span><div class="bar"><span class="s-grey" style="width:100%"></span></div><span class="mono">624</span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <header><h2>End-of-support timeline</h2></header>
+          <div class="body">
+            <div class="bar-row" style="grid-template-columns:110px 1fr 40px"><span>Already past</span><div class="bar"><span class="s-danger" style="width:100%"></span></div><span class="mono">312</span></div>
+            <div class="bar-row" style="grid-template-columns:110px 1fr 40px"><span>0-30 days</span><div class="bar"><span class="s-warn" style="width:28%"></span></div><span class="mono">64</span></div>
+            <div class="bar-row" style="grid-template-columns:110px 1fr 40px"><span>31-90 days</span><div class="bar"><span class="s-warn" style="width:54%"></span></div><span class="mono">123</span></div>
+            <div class="bar-row" style="grid-template-columns:110px 1fr 40px"><span>91-180 days</span><div class="bar"><span class="s-ok" style="width:40%"></span></div><span class="mono">92</span></div>
+            <div class="bar-row" style="grid-template-columns:110px 1fr 40px"><span>180+ days</span><div class="bar"><span class="s-ok" style="width:100%"></span></div><span class="mono">3,597</span></div>
+            <p class="muted" style="font-size:13px;margin:12px 0 0">OS catalog last reviewed 02 Oct 2026 by Security.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid g-2">
+        <div class="card">
+          <header><h2>Unsupported assets by environment and criticality</h2></header>
+          <div class="table-wrap">
+          <table>
+            <thead><tr><th>Environment</th><th>Critical</th><th>High</th><th>Medium</th><th>Low</th></tr></thead>
+            <tbody>
+              <tr><td>Production</td><td><span class="chip danger">9</span></td><td><span class="chip danger">21</span></td><td><span class="chip warn">17</span></td><td><span class="chip grey">7</span></td></tr>
+              <tr><td>UAT</td><td><span class="chip grey">0</span></td><td><span class="chip warn">12</span></td><td><span class="chip warn">34</span></td><td><span class="chip grey">19</span></td></tr>
+              <tr><td>Development</td><td><span class="chip grey">0</span></td><td><span class="chip grey">4</span></td><td><span class="chip grey">58</span></td><td><span class="chip grey">103</span></td></tr>
+              <tr><td>DR</td><td><span class="chip warn">2</span></td><td><span class="chip warn">6</span></td><td><span class="chip grey">9</span></td><td><span class="chip grey">11</span></td></tr>
+            </tbody>
+          </table>
+          </div>
+        </div>
+
+        <div class="card">
+          <header><h2>Team health scorecard</h2><span class="right muted" style="font-size:13px">Weighted by criticality</span></header>
+          <div class="table-wrap">
+          <table>
+            <thead><tr><th>Team</th><th>Assets</th><th>Obsolete</th><th>Score</th></tr></thead>
+            <tbody>
+              <tr><td>Core Infrastructure</td><td>1,540</td><td>88</td><td><span class="score">91</span></td></tr>
+              <tr><td>Digital Channels</td><td>1,122</td><td>101</td><td><span class="score mid">74</span></td></tr>
+              <tr><td>Network Operations</td><td>810</td><td>49</td><td><span class="score">86</span></td></tr>
+              <tr><td>Branch Technology</td><td>1,340</td><td>74</td><td><span class="score low">58</span></td></tr>
+            </tbody>
+          </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <header><h2>Priority: obsolete production assets</h2><a class="right" href="assets-list.html">View all 54</a></header>
+        <div class="table-wrap">
+        <table>
+          <thead><tr><th>Asset</th><th>Type</th><th>OS / version</th><th>End of support</th><th>Criticality</th><th>Owner</th><th>Health</th></tr></thead>
+          <tbody>
+            <tr><td><a href="asset-detail.html">PRD-DB-014</a><div class="mono muted">SRV-000412</div></td><td>Server</td><td>Windows Server 2012 R2</td><td>10 Oct 2023</td><td><span class="chip danger">Critical</span></td><td>Core Infrastructure</td><td><span class="chip danger">Obsolete</span></td></tr>
+            <tr><td><a href="asset-detail.html">PRD-APP-102</a><div class="mono muted">VM-001877</div></td><td>VM</td><td>Ubuntu 18.04 LTS</td><td>31 May 2023</td><td><span class="chip danger">High</span></td><td>Digital Channels</td><td><span class="chip danger">Obsolete</span></td></tr>
+            <tr><td><a href="asset-detail.html">BR-SW-221</a><div class="mono muted">NET-003290</div></td><td>Network device</td><td>Cisco IOS XE 16.9</td><td>30 Jun 2024</td><td><span class="chip warn">High</span></td><td>Branch Technology</td><td><span class="chip danger">Obsolete</span></td></tr>
+            <tr><td><a href="asset-detail.html">PRD-FILE-003</a><div class="mono muted">SRV-000388</div></td><td>Server</td><td>RHEL 7.9</td><td>30 Jun 2024</td><td><span class="chip warn">Medium</span></td><td>Core Infrastructure</td><td><span class="chip danger">Obsolete</span></td></tr>
+          </tbody>
+        </table>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+</body>
+</html>

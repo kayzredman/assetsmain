@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Compliance - Assets Management</title>
+  <link rel="icon" href="../docs/design/brand/favicon-32x32.png">
+  <link rel="stylesheet" href="../docs/design/brand/design-tokens.css">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="logo-block"><img src="../docs/design/brand/access-logo.png" alt="Access logo"></div>
+    <div class="product">Assets Management</div>
+    <nav class="nav">
+      <div class="group">Overview</div>
+      <a href="dashboard-security.html"><span class="ico">&#9703;</span>Security dashboard</a>
+      <div class="group">Inventory</div>
+      <a href="assets-list.html"><span class="ico">&#9776;</span>All assets</a>
+      <a href="it-inventory.html"><span class="ico">&#9881;</span>IT and Digital</a>
+      <div class="group">Business</div>
+      <a href="procurement.html"><span class="ico">&#9873;</span>Procurement <span class="soon">Phase 4</span></a>
+      <a class="active" href="compliance.html"><span class="ico">&#10003;</span>Compliance <span class="soon">Phase 5</span></a>
+      <div class="group">Admin</div>
+      <a href="#"><span class="ico">&#9786;</span>Users and roles</a>
+      <a href="#"><span class="ico">&#9638;</span>OS catalog</a>
+    </nav>
+    <div class="user"><div class="avatar">YA</div><div>Yaw Asante<small>Compliance</small></div></div>
+  </aside>
+
+  <div class="main">
+    <div class="banner-mock">MOCKUP &middot; placeholder for Phase 5 &middot; fictional data</div>
+    <div class="topbar">
+      <div class="search"><input placeholder="Search policies, controls, assets" aria-label="Search"></div>
+      <div class="spacer"></div>
+      <span class="role-badge">Compliance</span>
+    </div>
+
+    <main class="content">
+      <div class="page-head">
+        <div>
+          <h1>Compliance</h1>
+          <p>Registered assets assessed against internal policy controls.</p>
+        </div>
+        <div class="actions">
+          <a class="btn" href="#">Policy library</a>
+          <a class="btn primary" href="#">+ Record exception</a>
+        </div>
+      </div>
+
+      <section class="grid g-4">
+        <div class="card kpi ok"><span class="label">Overall compliance</span><span class="value">87%</span><span class="delta">+2 pts vs last month</span></div>
+        <div class="card kpi danger"><span class="label">Non-compliant assets</span><span class="value">612</span><span class="delta">across 5 controls</span></div>
+        <div class="card kpi warn"><span class="label">Active exceptions</span><span class="value">28</span><span class="delta">6 expire in 30 days</span></div>
+        <div class="card kpi neutral"><span class="label">Not yet assessed</span><span class="value">204</span><span class="delta">new assets</span></div>
+      </section>
+
+      <section class="card">
+        <header><h2>Control compliance by asset type</h2>
+          <div class="right legend"><span><i class="s-ok"></i>Compliant</span><span><i class="s-warn"></i>Exception</span><span><i class="s-danger"></i>Non-compliant</span></div>
+        </header>
+        <div class="body">
+          <div class="bar-row"><span>Supported OS (POL-SEC-01)</span><div class="bar"><span class="s-ok" style="width:81%"></span><span class="s-warn" style="width:4%"></span><span class="s-danger" style="width:15%"></span></div><span class="mono">81%</span></div>
+          <div class="bar-row"><span>Owner assigned (POL-AST-02)</span><div class="bar"><span class="s-ok" style="width:99%"></span><span class="s-danger" style="width:1%"></span></div><span class="mono">99%</span></div>
+          <div class="bar-row"><span>Backup configured (POL-OPS-04)</span><div class="bar"><span class="s-ok" style="width:90%"></span><span class="s-warn" style="width:3%"></span><span class="s-danger" style="width:7%"></span></div><span class="mono">90%</span></div>
+          <div class="bar-row"><span>Network firmware current (POL-NET-03)</span><div class="bar"><span class="s-ok" style="width:76%"></span><span class="s-warn" style="width:6%"></span><span class="s-danger" style="width:18%"></span></div><span class="mono">76%</span></div>
+        </div>
+      </section>
+
+      <section class="card">
+        <header><h2>Exceptions expiring soon</h2></header>
+        <div class="table-wrap">
+        <table>
+          <thead><tr><th>Asset</th><th>Control</th><th>Reason</th><th>Approved by</th><th>Expires</th></tr></thead>
+          <tbody>
+            <tr><td><a href="asset-detail.html">legacy-rpt-01</a></td><td>POL-SEC-01 Supported OS</td><td>Vendor application not yet certified on newer OS</td><td>CISO</td><td><span class="chip danger">In 9 days</span></td></tr>
+            <tr><td><a href="asset-detail.html">BR-SW-221</a></td><td>POL-NET-03 Firmware current</td><td>Branch maintenance window pending</td><td>Head of Network</td><td><span class="chip warn">In 21 days</span></td></tr>
+          </tbody>
+        </table>
+        </div>
+      </section>
+      <div class="note">Placeholder screen. Controls, checks and attestations are scoped in the roadmap for Phase 5.</div>
+    </main>
+  </div>
+</div>
+</body>
+</html>

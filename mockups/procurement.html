@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Procurement - Assets Management</title>
+  <link rel="icon" href="../docs/design/brand/favicon-32x32.png">
+  <link rel="stylesheet" href="../docs/design/brand/design-tokens.css">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="logo-block"><img src="../docs/design/brand/access-logo.png" alt="Access logo"></div>
+    <div class="product">Assets Management</div>
+    <nav class="nav">
+      <div class="group">Overview</div>
+      <a href="dashboard-security.html"><span class="ico">&#9703;</span>Security dashboard</a>
+      <div class="group">Inventory</div>
+      <a href="assets-list.html"><span class="ico">&#9776;</span>All assets</a>
+      <a href="it-inventory.html"><span class="ico">&#9881;</span>IT and Digital</a>
+      <div class="group">Business</div>
+      <a class="active" href="procurement.html"><span class="ico">&#9873;</span>Procurement <span class="soon">Phase 4</span></a>
+      <a href="compliance.html"><span class="ico">&#10003;</span>Compliance <span class="soon">Phase 5</span></a>
+      <div class="group">Admin</div>
+      <a href="#"><span class="ico">&#9786;</span>Users and roles</a>
+      <a href="#"><span class="ico">&#9638;</span>OS catalog</a>
+    </nav>
+    <div class="user"><div class="avatar">EB</div><div>Efua Boateng<small>Procurement</small></div></div>
+  </aside>
+
+  <div class="main">
+    <div class="banner-mock">MOCKUP &middot; placeholder for Phase 4 &middot; fictional data</div>
+    <div class="topbar">
+      <div class="search"><input placeholder="Search orders, vendors, assets" aria-label="Search"></div>
+      <div class="spacer"></div>
+      <span class="role-badge">Procurement</span>
+    </div>
+
+    <main class="content">
+      <div class="page-head">
+        <div>
+          <h1>Procurement</h1>
+          <p>Purchased goods and procurement activity, linked to the assets they produce.</p>
+        </div>
+        <div class="actions">
+          <a class="btn" href="#">Vendors</a>
+          <a class="btn primary" href="#">+ New purchase request</a>
+        </div>
+      </div>
+
+      <section class="grid g-4">
+        <div class="card kpi"><span class="label">Open requests</span><span class="value">14</span><span class="delta">5 awaiting approval</span></div>
+        <div class="card kpi warn"><span class="label">Orders in transit</span><span class="value">9</span><span class="delta">2 overdue</span></div>
+        <div class="card kpi"><span class="label">Received, not registered</span><span class="value">23</span><span class="delta">items without an asset record</span></div>
+        <div class="card kpi danger"><span class="label">Warranties expiring (90 days)</span><span class="value">37</span><span class="delta">across 6 vendors</span></div>
+      </section>
+
+      <section class="card">
+        <div class="tabs"><a class="active" href="#">Purchase orders</a><a href="#">Requests</a><a href="#">Invoices</a><a href="#">Warranty and contracts</a></div>
+        <div class="table-wrap">
+        <table>
+          <thead><tr><th>PO</th><th>Vendor</th><th>Description</th><th>Ordered</th><th>Status</th><th>Assets registered</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">PO-2026-0418</td><td>Dell Technologies</td><td>12 x PowerEdge R760</td><td>02 Oct 2026</td><td><span class="chip warn">In transit</span></td><td>0 / 12</td></tr>
+            <tr><td class="mono">PO-2026-0409</td><td>Cisco Partner</td><td>24 x Catalyst 9300 switches</td><td>21 Sep 2026</td><td><span class="chip ok">Received</span></td><td>18 / 24</td></tr>
+            <tr><td class="mono">PO-2026-0397</td><td>Microsoft Reseller</td><td>Windows Server 2025 licences (40)</td><td>10 Sep 2026</td><td><span class="chip ok">Received</span></td><td>n/a (licences)</td></tr>
+            <tr><td class="mono">PO-2026-0385</td><td>HP Inc.</td><td>150 x EliteBook laptops</td><td>29 Aug 2026</td><td><span class="chip danger">Overdue</span></td><td>0 / 150</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </section>
+      <div class="note">Placeholder screen. The full workflow (requests, approvals, receiving and asset registration) is scoped in the roadmap for Phase 4.</div>
+    </main>
+  </div>
+</div>
+</body>
+</html>

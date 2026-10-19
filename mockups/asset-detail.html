@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PRD-DB-014 - Assets Management</title>
+  <link rel="icon" href="../docs/design/brand/favicon-32x32.png">
+  <link rel="stylesheet" href="../docs/design/brand/design-tokens.css">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="logo-block"><img src="../docs/design/brand/access-logo.png" alt="Access logo"></div>
+    <div class="product">Assets Management</div>
+    <nav class="nav">
+      <div class="group">Overview</div>
+      <a href="dashboard-security.html"><span class="ico">&#9703;</span>Security dashboard</a>
+      <div class="group">Inventory</div>
+      <a class="active" href="assets-list.html"><span class="ico">&#9776;</span>All assets</a>
+      <a href="it-inventory.html"><span class="ico">&#9881;</span>IT and Digital</a>
+      <div class="group">Business</div>
+      <a href="procurement.html"><span class="ico">&#9873;</span>Procurement <span class="soon">Phase 4</span></a>
+      <a href="compliance.html"><span class="ico">&#10003;</span>Compliance <span class="soon">Phase 5</span></a>
+      <div class="group">Admin</div>
+      <a href="#"><span class="ico">&#9786;</span>Users and roles</a>
+      <a href="#"><span class="ico">&#9638;</span>OS catalog</a>
+    </nav>
+    <div class="user"><div class="avatar">KO</div><div>Kofi Owusu<small>IT and Digital</small></div></div>
+  </aside>
+
+  <div class="main">
+    <div class="banner-mock">MOCKUP &middot; fictional data</div>
+    <div class="topbar">
+      <div class="search"><input placeholder="Search assets by name, tag, IP, hostname" aria-label="Search"></div>
+      <div class="spacer"></div>
+      <span class="role-badge">IT and Digital</span>
+    </div>
+
+    <main class="content">
+      <div>
+        <div class="crumbs"><a href="assets-list.html">All assets</a> &rsaquo; Servers &rsaquo; PRD-DB-014</div>
+        <div class="page-head">
+          <div>
+            <h1>PRD-DB-014 <span class="mono muted" style="font-size:16px">SRV-000412</span></h1>
+            <p><span class="chip info">Active</span> <span class="chip danger">Obsolete</span> <span class="chip danger">Critical</span> <span class="chip nodot grey">Production</span></p>
+          </div>
+          <div class="actions">
+            <a class="btn" href="#">Change status</a>
+            <a class="btn primary" href="#">Edit</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="note"><b>Action needed:</b> Windows Server 2012 R2 reached end of support on 10 Oct 2023 (1,106 days ago). 6 assets depend on this server.</div>
+
+      <section class="grid g-21">
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div class="card">
+            <div class="tabs"><a class="active" href="#">Overview</a><a href="#">Relationships<span class="count">7</span></a><a href="#">History<span class="count">12</span></a><a href="#">Compliance</a><a href="#">Procurement</a></div>
+            <div class="body">
+              <div class="grid g-2">
+                <dl class="props">
+                  <dt>Name</dt><dd>PRD-DB-014</dd>
+                  <dt>Hostname</dt><dd class="mono">prd-db-014.corp.local</dd>
+                  <dt>IP address</dt><dd class="mono">10.20.4.14</dd>
+                  <dt>Role</dt><dd>Database server (core banking replica)</dd>
+                  <dt>Manufacturer</dt><dd>Dell PowerEdge R740</dd>
+                  <dt>Serial</dt><dd class="mono">7XK2L93</dd>
+                </dl>
+                <dl class="props">
+                  <dt>Operating system</dt><dd>Windows Server 2012 R2</dd>
+                  <dt>End of support</dt><dd>10 Oct 2023 <span class="chip danger">Past</span></dd>
+                  <dt>Owner team</dt><dd>Core Infrastructure</dd>
+                  <dt>Location</dt><dd>HQ &rsaquo; DC1 &rsaquo; Rack A12</dd>
+                  <dt>Acquired</dt><dd>14 Mar 2016</dd>
+                  <dt>Last seen</dt><dd>19 Oct 2026, 06:12 UTC (vCenter sync)</dd>
+                </dl>
+              </div>
+              <hr style="border:0;border-top:1px solid var(--line);margin:18px 0">
+              <dl class="props">
+                <dt>Resources</dt><dd>16 cores &middot; 128 GB RAM &middot; 4 TB storage</dd>
+                <dt>Custom attributes</dt><dd><span class="chip nodot grey">backup-tier: gold</span> <span class="chip nodot grey">patch-window: Sun 02:00</span></dd>
+              </dl>
+            </div>
+          </div>
+
+          <div class="card">
+            <header><h2>Relationships</h2><a class="right btn sm" href="#">+ Link asset</a></header>
+            <div class="table-wrap">
+            <table>
+              <thead><tr><th>Relationship</th><th>Asset</th><th>Type</th><th>Health</th></tr></thead>
+              <tbody>
+                <tr><td>Hosts (runs on this)</td><td><a href="asset-detail.html">Core Banking Reporting</a></td><td>Application</td><td><span class="chip ok">Supported</span></td></tr>
+                <tr><td>Hosts (runs on this)</td><td><a href="asset-detail.html">Treasury Data Mart</a></td><td>Application</td><td><span class="chip grey">Unknown</span></td></tr>
+                <tr><td>Connected to</td><td><a href="asset-detail.html">HQ-CORE-SW-01</a></td><td>Network device</td><td><span class="chip ok">Supported</span></td></tr>
+                <tr><td>Depends on</td><td><a href="asset-detail.html">PRD-STG-SAN-02</a></td><td>Server</td><td><span class="chip warn">Nearing EOL</span></td></tr>
+              </tbody>
+            </table>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div class="card">
+            <header><h2>Health</h2></header>
+            <div class="body" style="display:flex;gap:16px;align-items:center">
+              <div class="score low" style="width:72px;height:72px;font-size:24px">34</div>
+              <div>
+                <b>Poor</b>
+                <div class="muted" style="font-size:13px">Obsolete OS, critical asset, 6 dependents.</div>
+              </div>
+            </div>
+            <div class="body" style="border-top:1px solid var(--line);display:grid;gap:8px;font-size:13px">
+              <div style="display:flex;justify-content:space-between"><span>Obsolete OS</span><span class="chip danger nodot">-45</span></div>
+              <div style="display:flex;justify-content:space-between"><span>Criticality: Critical</span><span class="chip warn nodot">-15</span></div>
+              <div style="display:flex;justify-content:space-between"><span>Owner assigned</span><span class="chip ok nodot">0</span></div>
+              <div style="display:flex;justify-content:space-between"><span>Recently seen</span><span class="chip ok nodot">0</span></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <header><h2>Recent history</h2></header>
+            <div class="body">
+              <ul class="timeline">
+                <li><div><b>Last seen updated</b><div class="muted" style="font-size:13px">vCenter sync (ingest) &middot; today 06:12</div></div></li>
+                <li><div><b>Owner changed</b> to Core Infrastructure<div class="muted" style="font-size:13px">Kofi Owusu &middot; 12 Oct 2026</div></div></li>
+                <li><div><b>Criticality</b> High &rarr; Critical<div class="muted" style="font-size:13px">Ama Mensah (Security) &middot; 02 Oct 2026</div></div></li>
+                <li><div><b>Asset created</b> via CSV import<div class="muted" style="font-size:13px">Kofi Owusu &middot; 03 Feb 2026</div></div></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+</body>
+</html>

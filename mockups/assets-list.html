@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Asset registry - Assets Management</title>
+  <link rel="icon" href="../docs/design/brand/favicon-32x32.png">
+  <link rel="stylesheet" href="../docs/design/brand/design-tokens.css">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="logo-block"><img src="../docs/design/brand/access-logo.png" alt="Access logo"></div>
+    <div class="product">Assets Management</div>
+    <nav class="nav">
+      <div class="group">Overview</div>
+      <a href="dashboard-security.html"><span class="ico">&#9703;</span>Security dashboard</a>
+      <div class="group">Inventory</div>
+      <a class="active" href="assets-list.html"><span class="ico">&#9776;</span>All assets</a>
+      <a href="it-inventory.html"><span class="ico">&#9881;</span>IT and Digital</a>
+      <div class="group">Business</div>
+      <a href="procurement.html"><span class="ico">&#9873;</span>Procurement <span class="soon">Phase 4</span></a>
+      <a href="compliance.html"><span class="ico">&#10003;</span>Compliance <span class="soon">Phase 5</span></a>
+      <div class="group">Admin</div>
+      <a href="#"><span class="ico">&#9786;</span>Users and roles</a>
+      <a href="#"><span class="ico">&#9638;</span>OS catalog</a>
+    </nav>
+    <div class="user"><div class="avatar">KO</div><div>Kofi Owusu<small>IT and Digital</small></div></div>
+  </aside>
+
+  <div class="main">
+    <div class="banner-mock">MOCKUP &middot; fictional data</div>
+    <div class="topbar">
+      <div class="search"><input placeholder="Search assets by name, tag, IP, hostname" aria-label="Search"></div>
+      <div class="spacer"></div>
+      <span class="role-badge">IT and Digital</span>
+    </div>
+
+    <main class="content">
+      <div class="page-head">
+        <div>
+          <h1>All assets</h1>
+          <p>4,812 active assets across all teams.</p>
+        </div>
+        <div class="actions">
+          <a class="btn" href="#">Import CSV</a>
+          <a class="btn" href="#">Export</a>
+          <a class="btn primary" href="#">+ New asset</a>
+        </div>
+      </div>
+
+      <section class="card">
+        <div class="toolbar">
+          <select class="select" aria-label="Type"><option>Type: All</option><option>Server</option><option>VM</option><option>Network device</option><option>Application</option></select>
+          <select class="select" aria-label="Status"><option>Status: Active</option><option>Planned</option><option>Retired</option><option>Decommissioned</option></select>
+          <select class="select" aria-label="Environment"><option>Environment: All</option><option>Production</option><option>UAT</option><option>Development</option></select>
+          <select class="select" aria-label="Health"><option>Health: All</option><option>Obsolete</option><option>Nearing EOL</option><option>Supported</option><option>Unknown</option></select>
+          <select class="select" aria-label="Owner"><option>Owner: All teams</option><option>Core Infrastructure</option><option>Digital Channels</option></select>
+          <a class="btn sm" href="#">Save filter</a>
+          <span class="muted" style="margin-left:auto;font-size:13px">Sorted by last updated</span>
+        </div>
+        <div class="table-wrap">
+        <table>
+          <thead><tr><th>Asset</th><th>Type</th><th>Environment</th><th>OS / version</th><th>Location</th><th>Owner</th><th>Status</th><th>Health</th><th>Updated</th></tr></thead>
+          <tbody>
+            <tr><td><a href="asset-detail.html"><b>PRD-DB-014</b></a><div class="mono muted">SRV-000412</div></td><td>Server</td><td>Production</td><td>Windows Server 2012 R2</td><td>HQ &rsaquo; DC1 &rsaquo; Rack A12</td><td>Core Infrastructure</td><td><span class="chip info">Active</span></td><td><span class="chip danger">Obsolete</span></td><td class="muted">2 h ago</td></tr>
+            <tr><td><a href="asset-detail.html"><b>app-prod-07</b></a><div class="mono muted">VM-001906</div></td><td>VM</td><td>Production</td><td>Windows Server 2016</td><td>HQ &rsaquo; DC1</td><td>Digital Channels</td><td><span class="chip info">Active</span></td><td><span class="chip warn">Nearing EOL</span></td><td class="muted">5 h ago</td></tr>
+            <tr><td><a href="asset-detail.html"><b>HQ-CORE-SW-01</b></a><div class="mono muted">NET-000021</div></td><td>Network device</td><td>Production</td><td>Cisco IOS XE 17.9</td><td>HQ &rsaquo; MDF &rsaquo; Rack B01</td><td>Network Operations</td><td><span class="chip info">Active</span></td><td><span class="chip ok">Supported</span></td><td class="muted">Yesterday</td></tr>
+            <tr><td><a href="asset-detail.html"><b>Customer Onboarding Portal</b></a><div class="mono muted">APP-000207</div></td><td>Application</td><td>Production</td><td>-</td><td>Hosted on app-prod-07</td><td>Digital Channels</td><td><span class="chip info">Active</span></td><td><span class="chip grey">Unknown</span></td><td class="muted">Yesterday</td></tr>
+            <tr><td><a href="asset-detail.html"><b>uat-web-02</b></a><div class="mono muted">VM-001911</div></td><td>VM</td><td>UAT</td><td>Ubuntu 22.04 LTS</td><td>HQ &rsaquo; DC1</td><td><span class="muted">No owner</span></td><td><span class="chip info">Active</span></td><td><span class="chip ok">Supported</span></td><td class="muted">3 days ago</td></tr>
+            <tr><td><a href="asset-detail.html"><b>BR-ACC-AP-118</b></a><div class="mono muted">NET-003301</div></td><td>Network device</td><td>Production</td><td>Aruba OS 8.10</td><td>Kumasi Branch &rsaquo; Floor 1</td><td>Branch Technology</td><td><span class="chip grey">Retired</span></td><td><span class="chip grey">Unknown</span></td><td class="muted">1 week ago</td></tr>
+            <tr><td><a href="asset-detail.html"><b>PRD-FILE-003</b></a><div class="mono muted">SRV-000388</div></td><td>Server</td><td>Production</td><td>RHEL 7.9</td><td>HQ &rsaquo; DC1 &rsaquo; Rack A07</td><td>Core Infrastructure</td><td><span class="chip info">Active</span></td><td><span class="chip danger">Obsolete</span></td><td class="muted">1 week ago</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <div class="pager">
+          <span>Showing 1-7 of 4,812</span>
+          <span class="right"><a class="btn sm" href="#">Previous</a><a class="btn sm" href="#">Next</a></span>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+</body>
+</html>

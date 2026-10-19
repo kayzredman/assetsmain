@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign in - Assets Management</title>
+  <link rel="icon" href="../docs/design/brand/favicon-32x32.png">
+  <link rel="stylesheet" href="../docs/design/brand/design-tokens.css">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <div class="login-wrap">
+    <section class="login-art">
+      <div class="tag">Internal use only</div>
+      <div>
+        <h2>One registry for every asset.</h2>
+        <p>Security, IT and Digital, Procurement and Compliance work from the same trusted record.</p>
+        <ul>
+          <li>Know what is running, and what is out of support</li>
+          <li>Track provisioned systems and infrastructure</li>
+          <li>Tie purchases to the assets they produce</li>
+          <li>Show compliance with internal policy</li>
+        </ul>
+      </div>
+      <div class="tag">Assets Management System</div>
+    </section>
+
+    <section class="login-form">
+      <form class="login-card" onsubmit="return false">
+        <img src="../docs/design/brand/access-logo.png" alt="Access logo">
+        <div>
+          <h1>Sign in</h1>
+          <div class="muted">Use your assets system account.</div>
+        </div>
+        <div class="field">
+          <label for="email">Work email</label>
+          <input class="input" id="email" type="email" placeholder="name@company.com" autocomplete="username">
+        </div>
+        <div class="field">
+          <label for="pw">Password</label>
+          <input class="input" id="pw" type="password" placeholder="Password" autocomplete="current-password">
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:13px">
+          <label><input type="checkbox"> Keep me signed in</label>
+          <a href="#">Forgot password?</a>
+        </div>
+        <a class="btn primary" href="dashboard-security.html" style="justify-content:center;padding:11px">Sign in</a>
+        <button class="btn" type="button" style="justify-content:center" disabled title="Available when SSO is enabled (Phase 6)">Sign in with company SSO (coming soon)</button>
+        <div class="muted" style="font-size:12px">Access is logged. Contact an administrator to request an account.</div>
+      </form>
+    </section>
+  </div>
+</body>
+</html>
