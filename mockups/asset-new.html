@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>New asset - Assets Management</title>
+  <link rel="icon" href="../docs/design/brand/favicon-32x32.png">
+  <link rel="stylesheet" href="../docs/design/brand/design-tokens.css">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="logo-block"><img src="../docs/design/brand/access-logo.png" alt="Access logo"></div>
+    <div class="product">Assets Management</div>
+    <nav class="nav">
+      <div class="group">Overview</div>
+      <a href="dashboard-security.html"><span class="ico">&#9703;</span>Security dashboard</a>
+      <div class="group">Inventory</div>
+      <a class="active" href="assets-list.html"><span class="ico">&#9776;</span>All assets</a>
+      <a href="it-inventory.html"><span class="ico">&#9881;</span>IT and Digital</a>
+      <div class="group">Business</div>
+      <a href="procurement.html"><span class="ico">&#9873;</span>Procurement <span class="soon">Phase 4</span></a>
+      <a href="compliance.html"><span class="ico">&#10003;</span>Compliance <span class="soon">Phase 5</span></a>
+      <div class="group">Admin</div>
+      <a href="#"><span class="ico">&#9786;</span>Users and roles</a>
+      <a href="#"><span class="ico">&#9638;</span>OS catalog</a>
+    </nav>
+    <div class="user"><div class="avatar">KO</div><div>Kofi Owusu<small>IT and Digital</small></div></div>
+  </aside>
+
+  <div class="main">
+    <div class="banner-mock">MOCKUP &middot; fictional data</div>
+    <div class="topbar">
+      <div class="search"><input placeholder="Search assets by name, tag, IP, hostname" aria-label="Search"></div>
+      <div class="spacer"></div>
+      <span class="role-badge">IT and Digital</span>
+    </div>
+
+    <main class="content">
+      <div>
+        <div class="crumbs"><a href="assets-list.html">All assets</a> &rsaquo; New asset</div>
+        <div class="page-head">
+          <div>
+            <h1>New asset</h1>
+            <p>Register an asset once; every team sees the same record.</p>
+          </div>
+          <div class="actions">
+            <div class="stepper"><span class="done">1 Type</span><span class="current">2 Details</span><span>3 Review</span></div>
+          </div>
+        </div>
+      </div>
+
+      <form class="form-layout" onsubmit="return false">
+        <div class="form-stack">
+
+          <section class="card">
+            <header><h2>1. Asset type</h2><span class="right muted" style="font-size:13px">Type decides which detail fields appear below</span></header>
+            <div class="body">
+              <div class="type-cards">
+                <a class="type-card selected" href="#"><span class="glyph">&#9707;</span><b>Server</b><small>Physical or bare-metal</small></a>
+                <a class="type-card" href="vm-new.html"><span class="glyph">&#9729;</span><b>Virtual machine</b><small>Open VM form</small></a>
+                <a class="type-card" href="#"><span class="glyph">&#8644;</span><b>Network device</b><small>Switch, router, firewall, AP</small></a>
+                <a class="type-card" href="#"><span class="glyph">&#9638;</span><b>Application</b><small>In-house or vendor</small></a>
+                <a class="type-card" href="#"><span class="glyph">&#8943;</span><b>Other</b><small>Anything else</small></a>
+              </div>
+            </div>
+          </section>
+
+          <section class="card">
+            <header><h2>2. General</h2></header>
+            <div class="body form-grid">
+              <div class="field">
+                <label class="req" for="name">Name</label>
+                <input class="input" id="name" placeholder="e.g. PRD-DB-015" value="PRD-DB-015">
+                <span class="hint">Use the naming convention for the environment.</span>
+              </div>
+              <div class="field">
+                <label for="tag">Asset tag</label>
+                <div class="input-group"><input class="input mono" id="tag" value="SRV-000613" readonly><span class="addon">Auto</span></div>
+                <span class="hint">Generated on save; cannot be reused.</span>
+              </div>
+              <div class="field">
+                <label class="req" for="status">Status</label>
+                <select class="select" id="status" style="padding:10px 12px"><option>Planned</option><option selected>Active</option><option>Retired</option></select>
+                <span class="hint">Active assets require an owner team.</span>
+              </div>
+              <div class="field">
+                <label class="req" for="env">Environment</label>
+                <select class="select" id="env" style="padding:10px 12px"><option selected>Production</option><option>UAT</option><option>Development</option><option>DR</option><option>Not applicable</option></select>
+              </div>
+              <div class="field">
+                <label class="req" for="crit">Criticality</label>
+                <select class="select" id="crit" style="padding:10px 12px"><option>Low</option><option>Medium</option><option>High</option><option selected>Critical</option></select>
+              </div>
+              <div class="field">
+                <label class="req" for="owner">Owner team</label>
+                <select class="select" id="owner" style="padding:10px 12px"><option>Select a team</option><option selected>Core Infrastructure</option><option>Digital Channels</option><option>Network Operations</option><option>Branch Technology</option></select>
+              </div>
+              <div class="field full">
+                <label for="loc">Location</label>
+                <select class="select" id="loc" style="padding:10px 12px"><option>HQ &rsaquo; DC1 &rsaquo; Rack A12</option><option>HQ &rsaquo; DC1 &rsaquo; Rack A13</option><option>HQ &rsaquo; MDF &rsaquo; Rack B01</option><option>Kumasi Branch &rsaquo; Floor 1</option></select>
+              </div>
+            </div>
+          </section>
+
+          <section class="card">
+            <header><h2>3. Server details</h2><span class="chip info nodot right">Server</span></header>
+            <div class="body form-grid">
+              <div class="field">
+                <label class="req" for="host">Hostname</label>
+                <input class="input mono" id="host" value="prd-db-015.corp.local">
+              </div>
+              <div class="field">
+                <label for="ip">IP address(es)</label>
+                <input class="input mono" id="ip" value="10.20.4.15">
+                <span class="hint">Separate multiple addresses with commas.</span>
+              </div>
+              <div class="field">
+                <label for="role">Server role</label>
+                <input class="input" id="role" value="Database server">
+              </div>
+              <div class="field">
+                <label for="mfr">Manufacturer and model</label>
+                <input class="input" id="mfr" value="Dell PowerEdge R760">
+              </div>
+              <div class="field">
+                <label for="cpu">CPU cores</label>
+                <input class="input" id="cpu" type="number" value="32">
+              </div>
+              <div class="field">
+                <label for="ram">RAM (GB)</label>
+                <input class="input" id="ram" type="number" value="256">
+              </div>
+              <div class="field">
+                <label for="stor">Storage (GB)</label>
+                <input class="input" id="stor" type="number" value="8000">
+              </div>
+              <div class="field">
+                <label for="sn">Serial number</label>
+                <input class="input mono" id="sn" placeholder="e.g. 7XK2L93">
+              </div>
+            </div>
+          </section>
+
+          <section class="card">
+            <header><h2>4. Operating system and lifecycle</h2></header>
+            <div class="body form-grid">
+              <div class="field">
+                <label for="os">Operating system</label>
+                <select class="select" id="os" style="padding:10px 12px"><option>Windows Server 2025</option><option selected>Windows Server 2022</option><option>Windows Server 2019</option><option>Windows Server 2016</option><option>Windows Server 2012 R2</option><option>RHEL 9</option><option>Ubuntu 22.04 LTS</option></select>
+                <span class="hint">From the OS catalog maintained by Security.</span>
+              </div>
+              <div class="field">
+                <label>End of support (from catalog)</label>
+                <div><span class="chip ok">Supported until 14 Oct 2031</span></div>
+              </div>
+              <div class="field">
+                <label for="acq">Acquired on</label>
+                <input class="input" id="acq" type="date" value="2026-10-01">
+              </div>
+              <div class="field">
+                <label for="eos">End-of-support override</label>
+                <input class="input" id="eos" type="date">
+                <span class="hint">Only if the vendor contract differs from the catalog.</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="card">
+            <header><h2>5. Custom attributes and notes</h2></header>
+            <div class="body form-stack">
+              <div class="kv-row">
+                <div class="field"><label>Key</label><input class="input" value="backup-tier"></div>
+                <div class="field"><label>Value</label><input class="input" value="gold"></div>
+                <a class="btn sm" href="#">Remove</a>
+              </div>
+              <div class="kv-row">
+                <div class="field"><label>Key</label><input class="input" value="patch-window"></div>
+                <div class="field"><label>Value</label><input class="input" value="Sun 02:00"></div>
+                <a class="btn sm" href="#">Remove</a>
+              </div>
+              <div><a class="btn sm" href="#">+ Add attribute</a></div>
+              <div class="inline-callout warn">Do not store passwords, keys or tokens in attributes or notes.</div>
+              <div class="field">
+                <label for="notes">Notes</label>
+                <textarea class="input" id="notes" placeholder="Anything the next engineer should know"></textarea>
+              </div>
+            </div>
+          </section>
+
+          <div class="form-actions">
+            <a class="btn" href="assets-list.html">Cancel</a>
+            <span class="muted" style="font-size:13px">Unsaved changes</span>
+            <div class="right">
+              <a class="btn" href="#">Save and add another</a>
+              <a class="btn primary" href="asset-detail.html">Create asset</a>
+            </div>
+          </div>
+        </div>
+
+        <aside class="sticky-side">
+          <div class="card">
+            <header><h2>Preview</h2></header>
+            <div class="body" style="display:grid;gap:10px">
+              <div><b>PRD-DB-015</b> <span class="mono muted">SRV-000613</span></div>
+              <div><span class="chip info">Active</span> <span class="chip ok">Supported</span> <span class="chip danger">Critical</span></div>
+              <div class="muted" style="font-size:13px">Server &middot; Production &middot; Core Infrastructure<br>HQ &rsaquo; DC1 &rsaquo; Rack A12</div>
+            </div>
+          </div>
+          <div class="card">
+            <header><h2>Readiness</h2></header>
+            <div class="body">
+              <ul class="checklist">
+                <li>Name provided and unique</li>
+                <li>Owner team assigned</li>
+                <li>Operating system linked to catalog</li>
+                <li>Location set</li>
+                <li class="todo">Serial number (recommended)</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card">
+            <header><h2>After you save</h2></header>
+            <div class="body muted" style="font-size:13px">
+              You can link this server to the applications and VMs that run on it from the asset's Relationships tab. The change is recorded in the audit history.
+            </div>
+          </div>
+        </aside>
+      </form>
+    </main>
+  </div>
+</div>
+</body>
+</html>

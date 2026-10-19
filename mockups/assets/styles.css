@@ -156,3 +156,45 @@ dl.props dd { margin: 0; }
 .sw { width: 110px; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--line); font-size: var(--fs-xs); background: #fff; }
 .sw div { height: 44px; }
 .sw span { display: block; padding: 6px 8px; }
+
+/* ---------- Forms ---------- */
+.form-layout { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: var(--space-5); align-items: start; }
+@media (max-width: 1100px) { .form-layout { grid-template-columns: 1fr; } }
+.form-stack { display: flex; flex-direction: column; gap: var(--space-4); }
+.form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 20px; }
+.form-grid .full { grid-column: 1 / -1; }
+.form-grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 800px) { .form-grid, .form-grid.three { grid-template-columns: 1fr; } }
+.field .hint { font-size: var(--fs-xs); color: var(--ink-500); }
+.field .req::after { content: " *"; color: var(--danger-500); }
+.field textarea.input { min-height: 84px; resize: vertical; }
+.field .input.error { border-color: var(--danger-500); background: var(--danger-50); }
+.field .err { font-size: var(--fs-xs); color: var(--danger-600); font-weight: 600; }
+.input-group { display: flex; }
+.input-group .input { border-radius: var(--radius-md) 0 0 var(--radius-md); flex: 1; min-width: 0; }
+.input-group .addon { padding: 10px 12px; border: 1px solid var(--line); border-left: 0; background: var(--surface-2); color: var(--ink-500); border-radius: 0 var(--radius-md) var(--radius-md) 0; font-size: var(--fs-sm); white-space: nowrap; }
+.type-cards { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 1100px) { .type-cards { grid-template-columns: repeat(2, 1fr); } }
+.type-card { border: 2px solid var(--line); border-radius: var(--radius-md); padding: 14px 12px; text-align: center; background: var(--surface-0); cursor: pointer; display: flex; flex-direction: column; gap: 4px; align-items: center; color: var(--ink-900); }
+.type-card:hover { border-color: var(--primary-100); text-decoration: none; background: var(--surface-1); }
+.type-card .glyph { font-size: 22px; color: var(--ink-500); }
+.type-card b { font-size: var(--fs-md); }
+.type-card small { color: var(--ink-500); font-size: var(--fs-xs); }
+.type-card.selected { border-color: var(--primary-500); background: var(--primary-50); }
+.type-card.selected .glyph { color: var(--primary-500); }
+.stepper { display: flex; gap: 8px; flex-wrap: wrap; font-size: var(--fs-sm); }
+.stepper span { padding: 6px 12px; border-radius: 99px; background: var(--surface-2); color: var(--ink-500); font-weight: 600; }
+.stepper span.done { background: var(--success-50); color: var(--success-600); }
+.stepper span.current { background: var(--primary-500); color: #fff; }
+.sticky-side { position: sticky; top: calc(var(--topbar-h) + 38px); display: flex; flex-direction: column; gap: var(--space-4); }
+.checklist { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; font-size: var(--fs-sm); }
+.checklist li { display: flex; gap: 8px; align-items: flex-start; }
+.checklist li::before { content: "\2713"; width: 18px; height: 18px; border-radius: 50%; background: var(--success-500); color: #fff; font-size: 11px; display: grid; place-items: center; flex: none; margin-top: 1px; }
+.checklist li.todo::before { content: ""; background: var(--surface-2); border: 1px solid var(--ink-300); }
+.checklist li.bad::before { content: "!"; background: var(--danger-500); }
+.kv-row { display: grid; grid-template-columns: 1fr 1fr auto; gap: 10px; align-items: end; }
+.form-actions { display: flex; gap: 10px; align-items: center; padding: 14px 18px; background: var(--surface-0); border: 1px solid var(--line); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); position: sticky; bottom: 12px; }
+.form-actions .right { margin-left: auto; display: flex; gap: 10px; }
+.inline-callout { border-radius: var(--radius-md); padding: 10px 14px; font-size: var(--fs-sm); display: flex; gap: 10px; align-items: center; background: var(--danger-50); color: var(--danger-600); border: 1px solid #fecaca; }
+.inline-callout.warn { background: var(--warning-50); color: #92400e; border-color: #fde68a; }
+.inline-callout.ok { background: var(--success-50); color: var(--success-600); border-color: #bbf7d0; }

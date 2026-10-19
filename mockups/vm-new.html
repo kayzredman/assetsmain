@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Add virtual machine - Assets Management</title>
+  <link rel="icon" href="../docs/design/brand/favicon-32x32.png">
+  <link rel="stylesheet" href="../docs/design/brand/design-tokens.css">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="logo-block"><img src="../docs/design/brand/access-logo.png" alt="Access logo"></div>
+    <div class="product">Assets Management</div>
+    <nav class="nav">
+      <div class="group">Overview</div>
+      <a href="dashboard-security.html"><span class="ico">&#9703;</span>Security dashboard</a>
+      <div class="group">Inventory</div>
+      <a href="assets-list.html"><span class="ico">&#9776;</span>All assets</a>
+      <a class="active" href="it-inventory.html"><span class="ico">&#9881;</span>IT and Digital</a>
+      <div class="group">Business</div>
+      <a href="procurement.html"><span class="ico">&#9873;</span>Procurement <span class="soon">Phase 4</span></a>
+      <a href="compliance.html"><span class="ico">&#10003;</span>Compliance <span class="soon">Phase 5</span></a>
+      <div class="group">Admin</div>
+      <a href="#"><span class="ico">&#9786;</span>Users and roles</a>
+      <a href="#"><span class="ico">&#9638;</span>OS catalog</a>
+    </nav>
+    <div class="user"><div class="avatar">KO</div><div>Kofi Owusu<small>IT and Digital</small></div></div>
+  </aside>
+
+  <div class="main">
+    <div class="banner-mock">MOCKUP &middot; fictional data</div>
+    <div class="topbar">
+      <div class="search"><input placeholder="Search assets by name, tag, IP, hostname" aria-label="Search"></div>
+      <div class="spacer"></div>
+      <span class="role-badge">IT and Digital</span>
+    </div>
+
+    <main class="content">
+      <div>
+        <div class="crumbs"><a href="it-inventory.html">IT and Digital</a> &rsaquo; <a href="it-inventory.html">Virtual machines</a> &rsaquo; Add VM</div>
+        <div class="page-head">
+          <div>
+            <h1>Add virtual machine</h1>
+            <p>Record a provisioned VM, where it runs and what runs on it.</p>
+          </div>
+          <div class="actions">
+            <a class="btn" href="asset-new.html">Switch type</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="inline-callout">
+        <b>2 fields need attention</b> &middot; Owner team is required for Active VMs, and the IP address is already used by uat-web-02.
+      </div>
+
+      <form class="form-layout" onsubmit="return false">
+        <div class="form-stack">
+
+          <section class="card">
+            <header><h2>Identity</h2><span class="chip info nodot right">Virtual machine</span></header>
+            <div class="body form-grid">
+              <div class="field">
+                <label class="req" for="vname">VM name</label>
+                <input class="input" id="vname" value="app-prod-11">
+              </div>
+              <div class="field">
+                <label for="vtag">Asset tag</label>
+                <div class="input-group"><input class="input mono" id="vtag" value="VM-002187" readonly><span class="addon">Auto</span></div>
+              </div>
+              <div class="field">
+                <label class="req" for="vhost">Hostname</label>
+                <input class="input mono" id="vhost" value="app-prod-11.corp.local">
+              </div>
+              <div class="field">
+                <label class="req" for="vip">IP address(es)</label>
+                <input class="input mono error" id="vip" value="10.30.2.12">
+                <span class="err">10.30.2.12 is already assigned to uat-web-02 (VM-001911).</span>
+              </div>
+              <div class="field">
+                <label class="req" for="vstatus">Status</label>
+                <select class="select" id="vstatus" style="padding:10px 12px"><option selected>Planned</option><option>Active</option><option>Retired</option></select>
+              </div>
+              <div class="field">
+                <label class="req" for="venv">Environment</label>
+                <select class="select" id="venv" style="padding:10px 12px"><option selected>Production</option><option>UAT</option><option>Development</option><option>DR</option></select>
+              </div>
+            </div>
+          </section>
+
+          <section class="card">
+            <header><h2>Hosting and compute</h2></header>
+            <div class="body form-grid">
+              <div class="field">
+                <label class="req" for="hyp">Hypervisor</label>
+                <select class="select" id="hyp" style="padding:10px 12px"><option selected>vSphere</option><option>Hyper-V</option><option>KVM</option></select>
+              </div>
+              <div class="field">
+                <label class="req" for="clu">Cluster</label>
+                <select class="select" id="clu" style="padding:10px 12px"><option selected>HQ-PROD-01</option><option>HQ-PROD-02</option><option>HQ-UAT-01</option><option>DR-01</option></select>
+              </div>
+              <div class="field full">
+                <label class="req" for="hst">Host (physical server)</label>
+                <select class="select" id="hst" style="padding:10px 12px"><option selected>esx-hq-03 (SRV-000290)</option><option>esx-hq-04 (SRV-000291)</option></select>
+                <span class="hint">Creates a "hosted by" relationship to the host server.</span>
+              </div>
+              <div class="field full">
+                <div class="inline-callout ok">esx-hq-03 has capacity: 38 of 64 vCPU and 412 of 768 GB RAM allocated before this VM.</div>
+              </div>
+              <div class="field">
+                <label class="req" for="vcpu">vCPU</label>
+                <input class="input" id="vcpu" type="number" value="4">
+              </div>
+              <div class="field">
+                <label class="req" for="vram">RAM (GB)</label>
+                <input class="input" id="vram" type="number" value="16">
+              </div>
+              <div class="field">
+                <label class="req" for="vdisk">Disk (GB)</label>
+                <input class="input" id="vdisk" type="number" value="200">
+              </div>
+              <div class="field">
+                <label for="vloc">Location</label>
+                <select class="select" id="vloc" style="padding:10px 12px"><option selected>HQ &rsaquo; DC1</option><option>DR Site &rsaquo; Hall 2</option></select>
+                <span class="hint">Defaults to the host's location.</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="card">
+            <header><h2>Operating system</h2></header>
+            <div class="body form-grid">
+              <div class="field">
+                <label class="req" for="vos">Operating system</label>
+                <select class="select" id="vos" style="padding:10px 12px"><option>Windows Server 2022</option><option selected>Windows Server 2019</option><option>Windows Server 2016</option><option>RHEL 8</option><option>Ubuntu 22.04 LTS</option></select>
+              </div>
+              <div class="field">
+                <label>End of support (from catalog)</label>
+                <div><span class="chip warn">Nearing EOL: 09 Jan 2029</span> <span class="muted" style="font-size:12px">Supported for now</span></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="card">
+            <header><h2>Ownership</h2></header>
+            <div class="body form-grid">
+              <div class="field">
+                <label class="req" for="vowner">Owner team</label>
+                <select class="select error input" id="vowner"><option selected>Select a team</option><option>Core Infrastructure</option><option>Digital Channels</option></select>
+                <span class="err">Owner team is required.</span>
+              </div>
+              <div class="field">
+                <label for="vcrit">Criticality</label>
+                <select class="select" id="vcrit" style="padding:10px 12px"><option>Low</option><option selected>Medium</option><option>High</option><option>Critical</option></select>
+              </div>
+            </div>
+          </section>
+
+          <section class="card">
+            <header><h2>Applications running on this VM</h2><a class="right btn sm" href="#">+ Link application</a></header>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Application</th><th>Owner</th><th>Relationship</th><th></th></tr></thead>
+                <tbody>
+                  <tr><td><a href="asset-detail.html">Customer Onboarding Portal</a><div class="mono muted">APP-000207</div></td><td>Digital Channels</td><td><span class="chip nodot grey">Runs on</span></td><td><a class="btn sm" href="#">Remove</a></td></tr>
+                  <tr><td><a href="asset-detail.html">Agent Banking API</a><div class="mono muted">APP-000231</div></td><td>Digital Channels</td><td><span class="chip nodot grey">Runs on</span></td><td><a class="btn sm" href="#">Remove</a></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <div class="form-actions">
+            <a class="btn" href="it-inventory.html">Cancel</a>
+            <span class="muted" style="font-size:13px">Fix 2 fields to continue</span>
+            <div class="right">
+              <a class="btn" href="#">Save as draft</a>
+              <a class="btn primary" href="#">Create VM</a>
+            </div>
+          </div>
+        </div>
+
+        <aside class="sticky-side">
+          <div class="card">
+            <header><h2>Preview</h2></header>
+            <div class="body" style="display:grid;gap:10px">
+              <div><b>app-prod-11</b> <span class="mono muted">VM-002187</span></div>
+              <div><span class="chip grey">Planned</span> <span class="chip warn">Nearing EOL</span> <span class="chip nodot grey">Production</span></div>
+              <div class="muted" style="font-size:13px">vSphere &middot; HQ-PROD-01 &middot; esx-hq-03<br>4 vCPU &middot; 16 GB &middot; 200 GB<br>Windows Server 2019</div>
+            </div>
+          </div>
+          <div class="card">
+            <header><h2>Readiness</h2></header>
+            <div class="body">
+              <ul class="checklist">
+                <li>Name and hostname set</li>
+                <li>Host and cluster selected</li>
+                <li>Operating system linked to catalog</li>
+                <li class="bad">IP address conflicts with another VM</li>
+                <li class="bad">Owner team missing</li>
+              </ul>
+            </div>
+          </div>
+        </aside>
+      </form>
+    </main>
+  </div>
+</div>
+</body>
+</html>
